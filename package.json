@@ -55,6 +55,7 @@
     "eslint-plugin-react": "^6.7.1",
     "git-prepush-hook": "^1.0.1",
     "jest": "^17.0.3",
+    "react": "^15.4.1",
     "react-addons-test-utils": "^15.4.1",
     "react-dom": "^15.4.1",
     "rimraf": "^2.5.4"
