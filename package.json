@@ -18,7 +18,8 @@
   },
   "keywords": [
     "sort",
-    "sorting"
+    "sorting",
+    "reactabular"
   ],
   "files": [
     "dist",
