@@ -178,7 +178,8 @@ The general workflow goes as follows:
 /*
 import React from 'react';
 import orderBy from 'lodash/orderBy';
-import { Table, resolve } from 'reactabular';
+import * as resolve from 'table-resolver';
+import * as Table from 'reactabular-table';
 import * as sort from 'sortabular';
 import { compose } from 'redux';
 */
