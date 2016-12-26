@@ -207,6 +207,34 @@ describe('sort.sorter', function () {
     expect(result).toEqual(rows);
   });
 
+  it('sorts resolved numbers', function () {
+    const columns = [{
+      property: 'test',
+      header: {}
+    }];
+
+    const rows = [
+      { _test: 2 },
+      { _test: 0 }
+    ];
+
+    const expected = [
+      { _test: 0 },
+      { _test: 2 }
+    ];
+
+    const sortingColumns = {
+      0: {
+        direction: 'asc',
+        position: 0
+      }
+    };
+
+    const result = sorter({ columns, sortingColumns, sort: orderBy })(rows);
+
+    expect(result).toEqual(expected);
+  });
+
   it('does not fail if property is missing', function () {
     const columns = [{
       property: 'test',

@@ -1,3 +1,5 @@
+import result from 'lodash/result';
+import get from 'lodash/get';
 import defaultStrategy from './default-strategy';
 
 // sorter === lodash orderBy
@@ -27,17 +29,9 @@ const sorter = ({
       const property = realColumn.property;
       const value = row[property];
       // Pick resolved value by convention
-      const resolvedValue = row[`_${property}`] || value;
+      const resolvedValue = get(row, `_${property}`, value);
 
-      if (resolvedValue && resolvedValue.toLowerCase) {
-        return resolvedValue.toLowerCase();
-      }
-
-      if (value && value.toLowerCase) {
-        return value.toLowerCase();
-      }
-
-      return value;
+      return result(resolvedValue, 'toLowerCase', resolvedValue);
     };
 
     orderList[sortingColumn.position] = sortingColumn.direction;
