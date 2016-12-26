@@ -1,5 +1,10 @@
 ## sortabular
 
+1.1.0 / 2016-12-26
+==================
+
+  * Feature - Add support for sorting numbers. The interface is exactly the same as this is an internal change. #2
+
 1.0.0 / 2016-11-25
 ==================
 
