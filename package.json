@@ -1,6 +1,6 @@
 {
   "name": "sortabular",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Sort utilities",
   "scripts": {
     "test:all": "npm test && npm run test:lint",
