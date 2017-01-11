@@ -155,7 +155,7 @@ columns: [
     property: 'name',
     header: {
       label: 'name',
-      transforms: [sortable()]
+      transforms: [sortable]
     }
   }
 ]
