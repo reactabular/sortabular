@@ -18,9 +18,6 @@ const header = ({
   },
   strategy = defaultStrategy
 }) => {
-  if (!sortable) {
-    throw new Error('header - Missing sortable!');
-  }
   if (!getSortingColumns) {
     throw new Error('header - Missing getSortingColumns!');
   }
@@ -54,7 +51,7 @@ const header = ({
             {sortingPosition + 1}
           </span> : null
         }
-        {React.createElement(
+        {sortable && React.createElement(
           'span',
           sortable(
             value,

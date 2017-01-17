@@ -4,12 +4,19 @@ import TestUtils from 'react-addons-test-utils';
 import { byColumn, header } from '../src';
 
 describe('sort.header', function () {
-  it('throws an error if sortable is not passed', function () {
-    expect(
-      header.bind(null, {
-        getSortingColumns: () => {}
-      })
-    ).toThrow(Error);
+  it('allows sortable not to be passed', function () {
+    const expectedValue = 'foobar';
+    const headerTransform = header({
+      getSortingColumns: () => {}
+    })(expectedValue, {});
+    const renderedHeader = TestUtils.renderIntoDocument(
+      React.createElement(Wrapper, {}, headerTransform)
+    );
+    const receivedValue = TestUtils.findRenderedDOMComponentWithClass(
+      renderedHeader, 'sort-value'
+    );
+
+    expect(receivedValue.innerHTML).toEqual(expectedValue);
   });
 
   it('throws an error if getSortingColumns is not passed', function () {

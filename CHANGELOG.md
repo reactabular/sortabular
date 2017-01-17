@@ -1,5 +1,10 @@
 ## sortabular
 
+1.2.0 / 2017-01-17
+==================
+
+  * Feature - Allow `sort.header` `sortable` parameter to be skipped. This is useful if you want to use the component only for visualization.
+
 1.1.1 / 2017-01-12
 ==================
 
