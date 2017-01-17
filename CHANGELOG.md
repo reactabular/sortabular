@@ -4,6 +4,7 @@
 ==================
 
   * Feature - Allow `sort.header` `sortable` parameter to be skipped. This is useful if you want to use the component only for visualization.
+  * Feature - Separate `sort.order` component. This is useful if you need to display only the sorting status (i.e., direction) to the user.
 
 1.1.1 / 2017-01-12
 ==================

@@ -71,6 +71,10 @@ props = {
 }
 ```
 
+**`sort.order = ({ strategy = strategies.byIndex, getSortingColumns = () => [] }) => (value, { columnIndex })`**
+
+`sort.order` can be used to display a sorting arrow widget. It figures out the class name based on the current sorting status. `sort.header` uses this internally.
+
 ### Strategies
 
 Most of the functions accept a strategy. This allows you to modify their sorting behavior. By default they'll track sorting by column index. It's possible to change it to sort by property.

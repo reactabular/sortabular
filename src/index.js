@@ -6,3 +6,4 @@ export { default as sorter } from './sorter';
 export { default as reset } from './reset';
 export { default as sort } from './sort';
 export { default as strategies } from './strategies';
+export { default as order } from './order';
