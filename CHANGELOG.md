@@ -1,5 +1,10 @@
 ## sortabular
 
+1.3.0 / 2017-03-16
+==================
+
+  * Chore - Bump peer dependency to require lodash 4. Since lodash 3 won't work this is the only right solution.
+
 1.2.0 / 2017-01-17
 ==================
 
