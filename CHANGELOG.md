@@ -1,5 +1,10 @@
 ## sortabular
 
+1.4.0 / 2017-05-03
+==================
+
+  * Refactor - React 15.5 upgrades, fixed deprecations, Jest upgrade. #7
+
 1.3.0 / 2017-03-16
 ==================
 
