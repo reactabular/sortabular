@@ -57,7 +57,7 @@ const reverseSort = (data, columnIndexList, orderList) => (
 
 **`sort.header = ({ sortable, strategy = strategies.byIndex, getSortingColumns = () => [] }) => (value, { columnIndex })`**
 
-`sort.header` can be used to sort within a header cell. This works will with `sort.reset` since then you can apply both reseting and sorting to the same cell without conflicts. It expects an initialized sortable (i.e., `sort.sort`) and `getSortingColumns`. If sorting is active at a column, it displays the current order number.
+`sort.header` can be used to sort within a header cell. This works well with `sort.reset` since then you can apply both reseting and sorting to the same cell without conflicts. It expects an initialized sortable (i.e., `sort.sort`) and `getSortingColumns`. If sorting is active at a column, it displays the current order number.
 
 `sortable` and `strategy` parameters are optional. `getSortingColumns` is required.
 
