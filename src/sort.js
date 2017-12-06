@@ -6,7 +6,7 @@ const sort = ({
   getSortingColumns = () => [],
   onSort = () => {},
   strategy = defaultStrategy,
-  disableKeyboard = false,
+  disableKeyboard = false
 } = {}) => (_value, extra, { className, ...props } = {}) => {
   const sortingColumns = getSortingColumns();
   const field = extra[strategy.fieldName];
@@ -18,14 +18,14 @@ const sort = ({
   }
 
   const keyboardEventHandler = disableKeyboard ? {} : {
-    onKeyDown: (e) => { if (e.keyCode === 13) { onSort(field) }}
-  }
+    onKeyDown: (e) => { if (e.keyCode === 13) { onSort(field); } }
+  };
 
   return {
     ...props,
     className: classNames(className, headerClass),
     [event]: () => onSort(field),
-    ...keyboardEventHandler,
+    ...keyboardEventHandler
   };
 };
 
