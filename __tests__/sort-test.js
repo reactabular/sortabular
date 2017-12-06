@@ -45,6 +45,53 @@ describe('sort.sort', function () {
     expect(sorted).toEqual(testColumnIndex);
   });
 
+  it('triggers sorting on enter key', function () {
+    const testColumnIndex = 0;
+    let sorted;
+    const _sorter = sort({
+      onSort(columnIndex) {
+        sorted = columnIndex;
+      }
+    });
+    const result = _sorter('testValue', {
+      columnIndex: testColumnIndex
+    });
+
+    result.onKeyDown({ keyCode: 13 });
+
+    expect(sorted).toEqual(testColumnIndex);
+  });
+
+  it('does not triggers sorting on enter key if disableKeyboard=true', function () {
+    const testColumnIndex = 0;
+    const _sorter = sort({
+      disableKeyboard: true,
+      onSort() {}
+    });
+    const result = _sorter('testValue', {
+      columnIndex: testColumnIndex
+    });
+
+    expect(result.onKeyDown).toBeUndefined();
+  });
+
+  it('does not trigger sorting on other keyDown events', function () {
+    const testColumnIndex = 0;
+    let sorted;
+    const _sorter = sort({
+      onSort(columnIndex) {
+        sorted = columnIndex;
+      }
+    });
+    const result = _sorter('testValue', {
+      columnIndex: testColumnIndex
+    });
+
+    result.onKeyDown({ keyCode: 32 });
+
+    expect(sorted).toBeFalsy();
+  });
+
   it('allows strategy to be customized', function () {
     const testProperty = 'foobar';
     const sortDirection = 'asc';
