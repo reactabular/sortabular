@@ -4,10 +4,10 @@
   "description": "Sort utilities",
   "scripts": {
     "test:all": "npm test && npm run test:lint",
-    "test": "jest --",
-    "test:coverage": "jest --coverage --",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "test:lint": "eslint . --ext .js --cache",
-    "test:watch": "jest --watch --",
+    "test:watch": "jest --watch",
     "dist:build": "rimraf ./dist && babel ./src --out-dir ./dist",
     "preversion": "npm run test:all && npm run dist:build && git commit --allow-empty -am \"Update dist\""
   },

@@ -62,6 +62,30 @@ describe('sort.reset', function () {
     expect(result).toEqual(expected);
   });
 
+  it('does not crash if there is nothing to reset', function () {
+    let result;
+
+    const key = 'bar';
+    const columns = {
+      foo: {
+        position: 0
+      }
+    };
+    const resetable = reset({
+      getSortingColumns: () => columns,
+      onReset: ({ sortingColumns }) => {
+        result = sortingColumns;
+      },
+      strategy: strategies.byProperty
+    });
+
+    resetable(null, {
+      property: key
+    }).onDoubleClick();
+
+    expect(result).toEqual(undefined);
+  });
+
   it('allows changing event', function () {
     let result;
 

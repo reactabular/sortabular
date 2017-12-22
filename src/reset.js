@@ -15,6 +15,11 @@ const reset = ({
 
     const field = extra[strategy.fieldName];
 
+    // If the field doesn't exist, there's nothing to reset
+    if (!sortingColumns[field]) {
+      return;
+    }
+
     const position = sortingColumns[field].position;
     const newSortingColumns = {};
 
