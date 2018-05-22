@@ -1,3 +1,8 @@
+1.6.0 / 2018-05-22
+==================
+
+  * Feature - Throw error if sort is not passed to sorter. #13
+
 1.5.1 / 2017-12-22
 ==================
 
