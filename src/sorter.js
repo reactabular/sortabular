@@ -11,7 +11,11 @@ const sorter = ({
   strategy = defaultStrategy
 } = {}) => (data) => {
   if (!columns) {
-    throw new Error('sort.sorter - Missing columns!');
+    throw new Error('sort.sorter - Missing "columns" argument!');
+  }
+
+  if (!sort) {
+    throw new Error('sort.sorter - Missing "sort" argument!');
   }
 
   if (!sortingColumns) {

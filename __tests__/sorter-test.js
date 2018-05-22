@@ -124,7 +124,7 @@ describe('sort.sorter', function () {
     expect(result).toEqual(rows);
   });
 
-  it('returns rows if only rows is passed', function () {
+  it('returns rows if only columns and sort are passed', function () {
     const columns = [{
       property: 'test',
       header: {}
@@ -137,7 +137,7 @@ describe('sort.sorter', function () {
         test: 'def'
       }
     ];
-    const result = sorter({ columns })(rows);
+    const result = sorter({ columns, sort: orderBy })(rows);
 
     expect(result).toEqual(rows);
   });
@@ -364,5 +364,14 @@ describe('sort.sorter', function () {
 
   it('throws an error if columns are not passed', function () {
     expect(sorter()).toThrow(Error);
+  });
+
+  it('throws an error if "sort" argument is not passed', function () {
+    const columns = [{
+      header: {
+        label: 'demo'
+      }
+    }];
+    expect(sorter(columns)).toThrow(Error);
   });
 });
